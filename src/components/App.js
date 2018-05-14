@@ -1,11 +1,11 @@
 import React from 'react';
-import UserList from "./UserList";
+import GitSearchUsers from "./GitSearchUsers";
 
 export default class App extends React.Component {
     render() {
         return (
             <div className="container">
-                <UserList/>
+                <GitSearchUsers/>
             </div>
         )
     }
