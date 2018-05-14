@@ -1,9 +1,6 @@
-.container {
-  margin-top: 50px;
-}
-
 #git-users-search {
   position: relative;
+  margin-top: 50px;
 
   input {
     width: 100%;
@@ -15,7 +12,8 @@
     left: 0;
     max-height: 240px;
     overflow-y: auto;
-    width: 100%;
+    width: calc(100% - 15px);
+    padding-left: 15px;
 
     ul {
       list-style-type: none;
