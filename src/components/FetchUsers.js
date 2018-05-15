@@ -28,7 +28,7 @@ class FetchUsers extends React.Component {
 
     render() {
         return (
-            <div>{this.props.gitUsers.term !== '' ? 'Github Users:' : 'Type something in search input'}</div>
+            <span>{this.props.gitUsers.term !== '' ? 'Github Users:' : 'Type something in search input above'}</span>
         )
     }
 }
