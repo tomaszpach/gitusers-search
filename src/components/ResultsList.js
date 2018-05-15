@@ -4,8 +4,7 @@ import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
 import ImageUser from './ImageUser';
 
-let ResultsList = ({ gitUsers }) => {
-        return (
+let ResultsList = ({ gitUsers }) =>  (
             Object.keys(gitUsers.results).length > 0 ? (
                 <div id="results">
                     <ListGroup>
@@ -21,8 +20,7 @@ let ResultsList = ({ gitUsers }) => {
                     </ListGroup>
                 </div>
             ) : null
-        )
-};
+        );
 
 function mapStateToProps(state) {
     return ({
