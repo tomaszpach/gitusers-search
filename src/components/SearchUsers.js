@@ -1,25 +1,46 @@
 import React from 'react';
 import {connect} from "react-redux";
+import { FormGroup, FormControl, InputGroup, Glyphicon } from 'react-bootstrap'
 
 class SearchUsers extends React.Component {
     constructor(props) {
         super(props);
-        this.updateSearchTerm = this.updateSearchTerm.bind(this);
+
+        this.handleChange = this.handleChange.bind(this);
+
+        this.state = {
+            value: ''
+        }
+    }
+
+    handleChange(e) {
+        this.setState({
+            value: e.target.value
+        }, () => {
+            this.props.dispatch({
+                type: 'UPDATE_SEARCH_TERM',
+                term: this.state.value
+            })
+        });
     }
 
     render() {
         return (
-            <input type="text" placeholder="search" onChange={this.updateSearchTerm}/>
+            <div>
+                <FormGroup>
+                    <InputGroup>
+                        <InputGroup.Addon><Glyphicon glyph="search" /></InputGroup.Addon>
+                        <FormControl type="text" value={this.state.value}
+                                     placeholder="Enter text"
+                                     onChange={this.handleChange} />
+                        <InputGroup.Addon>
+                            <Glyphicon glyph="user" />
+                        </InputGroup.Addon>
+                    </InputGroup>
+                </FormGroup>
+            </div>
         )
-    }
-
-    updateSearchTerm(event) {
-        this.props.dispatch({
-            type: 'UPDATE_SEARCH_TERM',
-            term: event.target.value
-        })
     }
 }
 
 export default connect()(SearchUsers)
-
