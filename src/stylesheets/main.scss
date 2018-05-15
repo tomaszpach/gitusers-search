@@ -8,25 +8,16 @@
 
   #results {
     position: absolute;
-    top: 50px;
+    top: 70px;
     left: 0;
     max-height: 240px;
     overflow-y: auto;
     width: calc(100% - 15px);
     padding-left: 15px;
 
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-
-      li {
-        margin-bottom: 10px;
-
-        img {
-          max-height: 20px;
-          padding-right: 10px;
-        }
-      }
+    img {
+      max-height: 30px;
+      margin-right: 5px;
     }
   }
 }
