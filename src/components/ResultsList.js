@@ -4,16 +4,15 @@ import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
 import ImageUser from './ImageUser';
 
-class ResultsList extends React.Component {
-    render() {
+let ResultsList = ({ gitUsers }) => {
         return (
-            Object.keys(this.props.gitUsers.results).length > 0 ? (
+            Object.keys(gitUsers.results).length > 0 ? (
                 <div id="results">
                     <ListGroup>
                         {
-                            this.props.gitUsers.results.items.map((item, index) => {
+                            gitUsers.results.items.map((item, index) => {
                                 return (
-                                    <ListGroupItem key={index} href={`https://github.com/${item.login}`}>
+                                    <ListGroupItem key={index} href={item.html_url}>
                                         <ImageUser userImage={item.avatar_url}/> {item.login}
                                         </ListGroupItem>
                                 )
@@ -23,8 +22,7 @@ class ResultsList extends React.Component {
                 </div>
             ) : null
         )
-    }
-}
+};
 
 function mapStateToProps(state) {
     return ({
