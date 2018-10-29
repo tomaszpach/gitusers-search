@@ -1,0 +1,18 @@
+#git-users-search {
+  position: relative;
+  margin-top: 50px; }
+  #git-users-search input {
+    width: 100%; }
+  #git-users-search #results {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    max-height: 240px;
+    overflow-y: auto;
+    width: calc(100% - 15px);
+    padding-left: 15px; }
+    #git-users-search #results img {
+      max-height: 30px;
+      margin-right: 5px; }
+
+/*# sourceMappingURL=main.css.map */

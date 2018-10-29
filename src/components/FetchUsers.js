@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 class FetchUsers extends React.Component {
     fetchUsers() {
         if (this.props.gitUsers.term !== '') {
-            fetch(`https://api.github.com/search/users?q=${this.props.gitUsers.term}&access_token=d6c9b91e21dd6975db5aaceb9b0c5af8d49d1216`)
+            fetch(`https://api.github.com/search/users?q=${this.props.gitUsers.term}`)
                 .then(response => response.json())
                 .then(results => {
                     this.props.dispatch({
